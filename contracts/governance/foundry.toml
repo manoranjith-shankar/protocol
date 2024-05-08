@@ -18,11 +18,7 @@ match_path = "test/integration/*.sol"
 gas_price = 31_000_000_000
 
 [rpc_endpoints]
-goerli = "${GOERLI_RPC_URL}"
-mainnet = "${MAINNET_RPC_URL}"
-
-[etherscan]
-goerli = { key = "${ETHERSCAN_API_KEY}" }
+maroon = "${MAROON_RPC_URL}"
 
 [profile.smt.model_checker]
 engine = 'chc'
