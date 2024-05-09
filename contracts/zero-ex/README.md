@@ -14,14 +14,6 @@ This package contains contracts for the ZeroEx extensible contract architecture.
 npm install @0x/contracts-zero-ex --save
 ```
 
-## Contributing
-
-We strongly recommend that the community help us make improvements and determine the future direction of the protocol. To report bugs within this package, please create an issue in this repository.
-
-For proposals regarding the 0x protocol's smart contract architecture, message format, or additional functionality, go to the [0x Improvement Proposals (ZEIPs)](https://github.com/0xProject/ZEIPs) repository and follow the contribution guidelines provided therein.
-
-Please read our [contribution guidelines](../../.github/CONTRIBUTING.md) before getting started.
-
 ### Install Dependencies
 
 If you don't have yarn workspaces enabled (Yarn < v1.0) - enable them:
@@ -48,6 +40,24 @@ Or continuously rebuild on change:
 
 ```bash
 PKG=@0x/contracts-zero-ex yarn watch
+```
+
+## Deploy full ZeroEx contract using forge create
+
+```
+forge create --rpc-url <RPC_URL> --constructor-args "initializeCaller_address" --private-key <PRIVATE_KEY> contracts/src/migrations/FullMigration.sol:FullMigration
+```
+**Should return**
+```
+[⠊] Compiling...
+[⠰] Installing Solc version 0.6.12
+[⠔] Successfully installed Solc 0.6.12
+[⠘] Compiling 79 files with Solc 0.6.12
+[⠃] Solc 0.6.12 finished in 6.51s
+Compiler run successful!
+Deployer: initializeCaller_address
+Deployed to: deployed_address
+Transaction hash: txHash
 ```
 
 ### Clean
